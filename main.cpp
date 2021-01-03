@@ -47,8 +47,9 @@ int main()
     } while(b == 0);
 
     cout << "the greatest common divisor of " << a << " and " << b << " is " << nonRecursiveGCD(a,b) << endl;
-    cout << '\n' << "Press Enter to continue....";
-    cin.ignore(10000, '\n');
+    cout << "Press any key to continue....";
+    cin.ignore();
+    cin.get();
     return 0;
 }
 
