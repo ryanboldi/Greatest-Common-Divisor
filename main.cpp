@@ -1,6 +1,7 @@
 //trying to use euclidean algorithm for this
 
 #include <iostream>
+#include <climits>
 
 using namespace std;
 
@@ -18,7 +19,7 @@ int main()
     do{
         cout << "Enter number 1: ";
         if (!(cin >> a)){
-            cout << "Not a number! Please try again" << endl;
+            cout << "Not a valid number! Please try again" << endl;
             cin.clear();
             cin.ignore(10000, '\n');
         } else if (a < 1){
@@ -28,12 +29,12 @@ int main()
         } else {
             cout << "a = " << a << endl;
         }
-    } while(a == 0);
+    } while(a == 0 or a == INT_MAX);
 
     do{
         cout << "Enter number 2: ";
         if (!(cin >> b)){
-            cout << "Not a number! Please try again" << endl;
+            cout << "Not a valid number! Please try again" << endl;
             cin.clear();
             cin.ignore(10000, '\n');
         } else if (b < 1){
@@ -46,8 +47,8 @@ int main()
     } while(b == 0);
 
     cout << "the greatest common divisor of " << a << " and " << b << " is " << nonRecursiveGCD(a,b) << endl;
-    cout << "Press any key to continue....";
-    cin.ignore(10, '\n');
+    cout << '\n' << "Press Enter to continue....";
+    cin.ignore(10000, '\n');
     return 0;
 }
 
