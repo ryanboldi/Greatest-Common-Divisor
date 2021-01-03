@@ -17,13 +17,34 @@ int main()
     do{
         cout << "Enter number 1: ";
         if (!(cin >> a)){
-            cout << "Not a number! Please try again";
+            cout << "Not a number! Please try again" << endl;
             cin.clear();
-            cin.ignore(10000, \n);
+            cin.ignore(10000, '\n');
+        } else if (a < 1){
+            cout << "Please ensure your numbers are positive and non-zero! Please try again" << endl;
+            cin.clear();
+            cin.ignore(10000, '\n');
+        } else {
+            cout << "a = " << a << endl;
         }
-    }while(a != 0 && b!= 0);
+    }while(a == 0);
 
+    do{
+        cout << "Enter number 2: ";
+        if (!(cin >> b)){
+            cout << "Not a number! Please try again" << endl;
+            cin.clear();
+            cin.ignore(10000, '\n');
+        } else if (b < 1){
+            cout << "Please ensure your numbers are positive and non-zero! Please try again" << endl;
+            cin.clear();
+            cin.ignore(10000, '\n');
+        } else {
+            cout << "b = " << b << endl;
+        }
+    }while(b == 0);
 
+    cout << "the greatest common divisor of " << a << " and " << b << " is " << gcd(a,b) << endl;
     return 0;
 }
 
